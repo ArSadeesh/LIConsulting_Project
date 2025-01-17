@@ -7,36 +7,21 @@ import time
 side = st.sidebar
 with side:
     st.markdown(
-    "<h1 style='text-align: center;'> A Real Options Model for Whole Life Insurance </h1>",
+    "<h1 style='text-align: center; padding: 0px 10px 20px;'> A Real Options Model for Whole Life Insurance </h1>",
     unsafe_allow_html=True
     )
     st.markdown(
         """
-        <div style='
-            text-align: center;
-            font-size: 16px;
-            font-style: italic;
-            color: white;  /* White text for better contrast */
-            background-color: rgba(0, 0, 0, 0.9);  /* Pure black background with slight transparency */
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.8);'>
-            <p style='margin: 0;'>Created by</p>
-            <a href='https://www.linkedin.com/in/arnav-sadeesh/' target='_blank' style='
-                color:rgb(134, 189, 211); 
-                text-decoration: none; 
-                display: inline-flex; 
-                align-items: center;
-                margin-top: 8px;'>
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 20px; height: 20px; margin-right: 8px;"> 
+        <div style='display: flex; align-items: center; justify-content: center; color: white; background-color: black; padding: 8px;'>
+            <p style='margin: 0; margin-right: 6px;'>Created by</p>
+            <a href='https://www.linkedin.com/in/arnav-sadeesh/' target='_blank' style='color: lightblue; text-decoration: none;'>
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 15px; height: 15px; margin-right: 6px;">
                 Arnav Sadeesh
             </a>
         </div>
         """,
         unsafe_allow_html=True
     )
-
 side.markdown("---")
 side.subheader("Policy Parameters")
 
@@ -67,7 +52,7 @@ rate = side.slider(
 )
 
 DISCOUNT = 0.0425
-with side.expander(f"Discount Rate: **:orange[{DISCOUNT}]**") :
+with side.expander(f"Discount Rate: **:green[{DISCOUNT}]**") :
     st.write("""
               Standard risk-neutral options pricing -- 
               future benefits discounted at the risk-free rate (*10-year UST*)""")
@@ -218,6 +203,16 @@ def insights() :
 
 col1, col2, col3 = st.columns(3)
 with col2: 
+    st.markdown(
+    """
+    <style>
+    div.stButton > button {
+        color: black; /* Changes text color to black */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
     viz = st.button("Visualize My Policy", type = "primary", icon = "📊")
 
 with st.container() : 
