@@ -1,4 +1,3 @@
-altair @ file:///home/conda/feedstock_root/build_artifacts/altair-split_1734244716962/work
 appnope @ file:///home/conda/feedstock_root/build_artifacts/appnope_1733332318622/work
 asttokens @ file:///home/conda/feedstock_root/build_artifacts/asttokens_1733250440834/work
 attrs @ file:///home/conda/feedstock_root/build_artifacts/attrs_1734348785146/work
