@@ -7,7 +7,7 @@ import time
 side = st.sidebar
 with side:
     st.markdown(
-    "<h1 style='text-align: center; padding: 0px 10px 20px;'> A Real Options Model for Whole Life Insurance </h1>",
+    "<h1 style='text-align: center; padding: 0px 10px 20px;'> A Real Options Model for Universal Life Insurance </h1>",
     unsafe_allow_html=True
     )
     st.markdown(
@@ -52,7 +52,7 @@ rate = side.slider(
 )
 
 DISCOUNT = 0.0425
-with side.expander(f"Discount Rate: **:green[{DISCOUNT}]**") :
+with side.expander(f"Discount Rate: **:green[{DISCOUNT:.2%}]**") :
     st.write("""
               Standard risk-neutral options pricing -- 
               future benefits discounted at the risk-free rate (*10-year UST*)""")
@@ -142,9 +142,10 @@ def populate_text() :
     header_placeholder.header("Real Options Modeling in Life Insurance")
     subheader_placeholder.subheader("Instructions: ")
     body_placeholder.write("""
-        This Real Options Model for **Whole-Life Insurance** allows users to analyze and optimize policy 
+        This Real Options Model for **Universal Life Insurance** allows users to analyze and optimize policy 
         decisions by leveraging real options analysis. **_Input key policy parameters on the left_** for the model to 
-        dynamically calculate and visualize the surrender value versus the continuation value at each policy year.
+        dynamically calculate and visualize the surrender value versus the continuation value at each policy year to 
+        determine the choice the creates most value for your beneficiary.
         
         Using recursion, the model factors in an American-style options perspective, accounting
         for mortality risk, the accumulation of cash value, the time value of money, and the influence
@@ -190,7 +191,7 @@ def insights() :
         time.sleep(2)
         st.write("***")
         st.warning("""
-                *Note that this model is NOT financial advice --- please use it soley as a visualization tool to 
+                *Note that this model is NOT financial advice --- please use it solely as a visualization tool to 
                 build a a more informed perspective on your policy!*
                 """)
     else : 
